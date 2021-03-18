@@ -24,3 +24,5 @@ spec:
       annotations:
         kubernetes.io/ingress.class: nginx
       path: "/"
+    serviceMonitor:
+      enabled: true
