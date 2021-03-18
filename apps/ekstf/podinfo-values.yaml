@@ -9,4 +9,4 @@ spec:
   values:
     ingress:
       hosts:
-        - podinfo.ekstf
+        - podinfo.jm.lab
