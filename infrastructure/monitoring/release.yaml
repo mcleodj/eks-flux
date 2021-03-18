@@ -31,10 +31,10 @@ spec:
       serviceMonitor:
         https: true
         # insecureSkipVerify: true
-    # kubeProxy:
-    #   service:
-    #     port: 10256
-    #     targetPort: 10256
+    kubeProxy:
+      service:
+        port: 10256
+        targetPort: 10256
     #   serviceMonitor:
     #     https: true
         # insecureSkipVerify: true
@@ -42,4 +42,5 @@ spec:
       serviceMonitor:
         https: true
         # insecureSkipVerify: true
-
+    prometheusSpec:
+      ruleNamespaceSelector: {podinfo, monitoring}
