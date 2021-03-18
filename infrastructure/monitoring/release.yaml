@@ -1,0 +1,45 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: monitoring
+spec:
+  releaseName: kube-prometheus-stack
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      sourceRef:
+        kind: HelmRepository
+        name: promethus-community
+        namespace: flux-system
+      version: "13.7.2"
+  interval: 1h0m0s
+  install:
+    remediation:
+      retries: 3
+  values:
+    kubeControllerManager:
+      service:
+        port: 10257
+        targetPort: 10257
+      serviceMonitor:
+        https: true
+        # insecureSkipVerify: true
+    kubeScheduler:
+      service:
+        port: 10259
+        targetPort: 10259
+      serviceMonitor:
+        https: true
+        # insecureSkipVerify: true
+    kubeProxy:
+      service:
+        port: 10256
+        targetPort: 10256
+      serviceMonitor:
+        https: true
+        # insecureSkipVerify: true
+    kubeEtcd:
+      serviceMonitor:
+        https: true
+        # insecureSkipVerify: true
+
