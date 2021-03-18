@@ -43,4 +43,5 @@ spec:
         https: true
         # insecureSkipVerify: true
     prometheusSpec:
-      ruleNamespaceSelector: {podinfo, monitoring}
+      ruleNamespaceSelector:
+        any: true
