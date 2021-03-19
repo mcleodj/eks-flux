@@ -51,7 +51,7 @@ spec:
     # webhooks:
     #   - name: acceptance-test
     #     type: pre-rollout
-    #     url: http://flagger-loadtester.test/
+    #     url: http://flagger-loadtester.podinfo/
     #     timeout: 30s
     #     metadata:
     #       type: bash
