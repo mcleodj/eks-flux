@@ -7,7 +7,7 @@ spec:
   type: github
   address: https://github.com/mcleodj/eks-flux
   secretRef:
-    name: flux-system
+    name: notify-token
 ---
 apiVersion: notification.toolkit.fluxcd.io/v1beta1
 kind: Alert
