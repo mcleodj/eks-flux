@@ -1,0 +1,16 @@
+apiVersion: flagger.app/v1beta1
+kind: MetricTemplate
+metadata:
+  name: successful_requests
+  namespace: nginx-ingress
+spec:
+  provider: 
+    type: prometheus
+    address: http://kube-prometheus-stack-prometheus.monitoring:9090
+  query: |
+    rate(
+      http_requests_total{
+        status!="500"
+        kubernetes_namespace="{{ namespace }}"
+      }[1m]
+    )
