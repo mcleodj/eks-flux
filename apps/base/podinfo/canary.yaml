@@ -41,7 +41,10 @@ spec:
     stepWeight: 5
     # NGINX Prometheus checks
     metrics:
-    - name: successfulHttpRequests
+    - name: success-requests
+      templateRef:
+        name: successful-http-requests
+        namespace: nginx-ingress
       thresholdRange:
         max: 1
       interval: 1m
