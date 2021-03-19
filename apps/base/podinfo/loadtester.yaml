@@ -1,0 +1,14 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: flagger-loadtester
+spec:
+  releaseName: loadtester
+  chart:
+    spec:
+      chart: loadtester
+      sourceRef:
+        kind: HelmRepository
+        name: flagger
+        namespace: podinfo
+  interval: 1m
