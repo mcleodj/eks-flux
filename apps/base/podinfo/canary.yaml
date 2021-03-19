@@ -41,7 +41,7 @@ spec:
     stepWeight: 5
     # NGINX Prometheus checks
     metrics:
-    - name: successful_requests
+    - name: successfulHttpRequests
       thresholdRange:
         max: 1
       interval: 1m
