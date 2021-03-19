@@ -27,7 +27,8 @@ spec:
     # ClusterIP port number
     port: 80
     # container port number or name
-    targetPort: 9898
+    targetPort: http
+    name: podinfo
   analysis:
     # schedule interval (default 60s)
     interval: 10s
@@ -41,9 +42,9 @@ spec:
     stepWeight: 5
     # NGINX Prometheus checks
     metrics:
-    - name: success-requests
+    - name: error-rate
       templateRef:
-        name: successful-http-requests
+        name: error-rate
         namespace: nginx-ingress
       thresholdRange:
         max: 1

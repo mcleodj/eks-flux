@@ -4,8 +4,8 @@ metadata:
   annotations:
     release: podinfo
   labels:
-    app.kubernetes.io/name: podinfo
-  name: podinfo
+    app.kubernetes.io/name: podinfo-primary
+  name: podinfo-primary
   namespace: podinfo
 spec:
   endpoints:
@@ -14,4 +14,22 @@ spec:
     port: http
   selector:
     matchLabels:
-      app.kubernetes.io/name: podinfo
+      app.kubernetes.io/name: podinfo-primary
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    release: podinfo
+  labels:
+    app.kubernetes.io/name: podinfo-canary
+  name: podinfo-canary
+  namespace: podinfo
+spec:
+  endpoints:
+  - interval: 15s
+    path: /metrics
+    port: http
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: podinfo-canary

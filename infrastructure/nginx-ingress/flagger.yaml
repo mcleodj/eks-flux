@@ -14,3 +14,4 @@ spec:
   interval: 1h0m0s
   values:
     meshProvider: nginx
+    metricsServer: http://kube-prometheus-stack-prometheus.monitoring:9090

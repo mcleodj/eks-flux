@@ -1,16 +1,24 @@
 apiVersion: flagger.app/v1beta1
 kind: MetricTemplate
 metadata:
-  name: successful-http-requests
+  name: error-rate
   namespace: nginx-ingress
 spec:
   provider: 
     type: prometheus
     address: http://kube-prometheus-stack-prometheus.monitoring:9090
   query: |
+    100 - rate(
+      http_requests_total{
+        status!="5.*",
+        namespace="{{ namespace }}",
+        job="{{ target }}-canary"
+      }[{{ interval }}]
+    )
+    /
     rate(
       http_requests_total{
-        status!="500",
-        kubernetes_namespace="{{ namespace }}"
-      }[1m]
-    )
+        namespace="{{ namespace }}",
+        job="{{ target }}-canary"
+      }[{{ interval }}]
+    ) * 100
