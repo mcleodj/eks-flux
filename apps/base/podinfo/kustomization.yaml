@@ -4,4 +4,5 @@ namespace: podinfo
 resources:
   - namespace.yaml
   - release.yaml
+  - serviceMonitor.yaml
 

@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: serviceMonitor
+metadata:
+  annotations:
+    release: podinfo
+  labels:
+    app.kubernetes.io/name: podinfo
+  name: podinfo
+  namespace: podinfo
+spec:
+  endpoints:
+  - interval: 15s
+    path: /metrics
+    port: http
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: podinfo

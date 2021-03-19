@@ -24,6 +24,7 @@ spec:
       annotations:
         kubernetes.io/ingress.class: nginx
       path: "/"
-    serviceMonitor:
-      enabled: true
+    # Service Monitor doesn't have matchLabels set correctly
+    # serviceMonitor:
+    #   enabled: true
     replicaCount: 10
