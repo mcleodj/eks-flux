@@ -4,3 +4,4 @@ namespace: nginx-ingress
 resources:
   - namespace.yaml
   - release.yaml
+  - flagger.yaml

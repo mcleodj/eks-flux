@@ -5,3 +5,4 @@ resources:
   - bitnami.yaml
   - prom-community.yaml
   - podinfo.yaml
+  - flagger.yaml
