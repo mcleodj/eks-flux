@@ -1,7 +1,7 @@
 apiVersion: flagger.app/v1beta1
 kind: MetricTemplate
 metadata:
-  name: successfulHttpRequests
+  name: successful-http-requests
   namespace: nginx-ingress
 spec:
   provider: 
