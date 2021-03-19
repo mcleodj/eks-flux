@@ -10,7 +10,7 @@ spec:
   query: |
     rate(
       http_requests_total{
-        status!="500"
+        status!="500",
         kubernetes_namespace="{{ namespace }}"
       }[1m]
     )
