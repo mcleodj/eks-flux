@@ -8,3 +8,5 @@ configMapGenerator:
   - name: gotk-dashboards
     files:
       - dashboards/gotk-dashboard.json
+generatorOptions:
+  disableNameSuffixHash: true
