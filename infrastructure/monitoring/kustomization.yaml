@@ -4,4 +4,7 @@ namespace: monitoring
 resources:
   - namespace.yaml
   - release.yaml
-  - dashboards-configmap.yaml
+configMapGenerator:
+  - name: gotk-dashboards
+    files:
+      - dashboards/gotk-dashboard.json
