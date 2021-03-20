@@ -41,3 +41,6 @@ spec:
         #   any: true
         podMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
+    grafana:
+      dashboardsConfigMaps:
+        - dashboards-configmap
