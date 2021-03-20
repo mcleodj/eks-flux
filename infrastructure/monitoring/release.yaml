@@ -41,8 +41,6 @@ spec:
         #   any: true
         podMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
-    # grafana:
-    #   extraConfigmapMounts:
-    #   - name: dashboards-configmap
-    #     mountPath: /etc/grafana/provisioning/dashboards/gotk.json
-    #     configMap: dashboards-configmap
+    grafana:
+      serverDashboardConfigmaps:
+        - dashboards
