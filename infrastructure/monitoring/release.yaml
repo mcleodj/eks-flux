@@ -42,5 +42,6 @@ spec:
         podMonitorSelectorNilUsesHelmValues: false
         serviceMonitorSelectorNilUsesHelmValues: false
     grafana:
-      serverDashboardConfigmaps:
-        - dashboards-configmap
+      sidecar:
+        dashboards:
+          enabled: true
