@@ -16,3 +16,9 @@ spec:
   install:
     remediation:
       retries: 3
+  values:
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+        
