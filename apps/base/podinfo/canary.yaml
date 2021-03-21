@@ -49,15 +49,15 @@ spec:
       thresholdRange:
         max: 1
       interval: 1m
-    # testing (optional)
-    # webhooks:
-    #   - name: acceptance-test
-    #     type: pre-rollout
-    #     url: http://flagger-loadtester.podinfo/
-    #     timeout: 30s
-    #     metadata:
-    #       type: bash
-    #       cmd: "curl -sd 'test' http://podinfo-canary/token | grep token"
+    testing (optional)
+    webhooks:
+      - name: acceptance-test
+        type: pre-rollout
+        url: http://flagger-loadtester.podinfo/
+        timeout: 30s
+        metadata:
+          type: bash
+          cmd: "curl -sd 'test' http://podinfo-canary/token | grep token"
     #   - name: load-test
     #     url: http://flagger-loadtester.test/
     #     timeout: 5s
