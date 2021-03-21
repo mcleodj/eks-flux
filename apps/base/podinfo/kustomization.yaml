@@ -6,4 +6,5 @@ resources:
   - release.yaml
   - serviceMonitor.yaml
   - canary.yaml
+  - loadtester.yaml
 
