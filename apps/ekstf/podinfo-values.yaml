@@ -9,4 +9,4 @@ spec:
   values:
     ingress:
       hosts:
-        - podinfo.jm.lab
+        - podinfo.jamesmcleod.xyz
