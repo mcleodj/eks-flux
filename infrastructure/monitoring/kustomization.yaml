@@ -5,9 +5,9 @@ resources:
   - namespace.yaml
   - release.yaml
 configMapGenerator:
-  - name: gotk-dashboards
+  - name: eks-flux-dashboards
     files:
-      - dashboards/gotk-dashboard.json
+      - dashboards/*.json
     options:
       labels:
         grafana_dashboard: "1"
