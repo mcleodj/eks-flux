@@ -4,7 +4,7 @@ metadata:
   name: podinfo
   namespace: podinfo
 spec:
-  provider: nginx
+  provider: nginx # Not sure this is necessary to override the default
   targetRef:
     apiVersion: apps/v1
     kind: Deployment
@@ -42,7 +42,7 @@ spec:
           type: bash
           cmd: "curl -sd 'test' http://podinfo-canary/token | grep token"
       - name: load-test
-        url: http://flagger-loadtester.test/
+        url: http://loadtester.podinfo/
         timeout: 5s
         metadata:
           cmd: "hey -z 1m -q 10 -c 2 http://podinfo.jamesmcleod.xyz"
