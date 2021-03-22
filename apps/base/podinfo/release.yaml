@@ -28,3 +28,5 @@ spec:
     # serviceMonitor:
     #   enabled: true
     replicaCount: 10
+    service:
+      enabled: false
