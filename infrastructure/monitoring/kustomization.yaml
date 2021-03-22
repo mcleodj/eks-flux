@@ -7,7 +7,9 @@ resources:
 configMapGenerator:
   - name: eks-flux-dashboards
     files:
-      - dashboards/*.json
+      - dashboards/gotk-cluster.json
+      - dashboards/gotk-control-plane.json
+      - dashboards/nginx-dashboard.json
     options:
       labels:
         grafana_dashboard: "1"
