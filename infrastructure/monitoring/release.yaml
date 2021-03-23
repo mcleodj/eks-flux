@@ -45,4 +45,4 @@ spec:
       extraConfigmapMounts:
        - name: gotk-dashboards
          mountPath: /etc/grafana/dashboards
-         configMap: gotk-dashboards
+         configMap: eks-flux-dashboards
