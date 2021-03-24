@@ -12,7 +12,7 @@ spec:
         kind: HelmRepository
         name: podinfo
         namespace: flux-system
-      version: "5.0.1" 
+      version: 5.0.2 # {"$imagepolicy": "flux-system:podinfo:tag"}
   interval: 5m
   install:
     remediation:
@@ -30,5 +30,3 @@ spec:
     replicaCount: 10
     service:
       enabled: false
-    image:
-      tag: 5.0.1 # {"$imagepolicy": "flux-system:podinfo:tag"}
