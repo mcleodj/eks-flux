@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - notify-secret.yaml
 - github-notify.yaml
+- podinfo-images.yaml
