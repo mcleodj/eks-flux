@@ -31,4 +31,5 @@ spec:
     service:
       enabled: false
     image:
+      repository: ghcr.io/stefanprodan/podinfo
       tag: 5.0.2 # {"$imagepolicy": "flux-system:podinfo:tag"}
